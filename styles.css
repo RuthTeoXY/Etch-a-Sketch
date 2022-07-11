@@ -1,6 +1,6 @@
 .container {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   background-color: antiquewhite;
   border: solid;
   display: flex;
@@ -13,6 +13,7 @@
 
 .grid {
   border: solid;
+  border-width: 0.2px;
   height: auto;
   width: auto;
   flex-grow: 1;
@@ -20,4 +21,8 @@
 
 .button {
   background-color: darkgray;
+}
+
+.dark {
+  background-color: darkolivegreen;
 }

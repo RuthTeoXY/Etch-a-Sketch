@@ -4,7 +4,6 @@ btn.addEventListener("click", changeGrid);
 
 function drawGrid(x = 16) {
   const firstRow = document.createElement("div");
-
   for (i = 0; i < x; i++) {
     const newGrid = document.createElement("div");
     newGrid.classList.add("grid");
@@ -15,12 +14,16 @@ function drawGrid(x = 16) {
     newRow.classList.add("row");
     canvas.appendChild(newRow);
   }
+  setHoverGrid();
 }
 
 function changeGrid() {
   let y = prompt("How many squares per side?");
-  clearGrid();
-  // clearGridV2();
+  while (y > 100) {
+    y = prompt("Please keep to 100 or less");
+  }
+  // clearGrid();
+  clearGridV2();
   drawGrid(y);
 }
 
@@ -39,9 +42,19 @@ function clearGrid() {
       child = row.lastChild;
     }
   }
-  canvas.innerHTML = "";
-  // console.log("after clear");
-  // console.log(canvas);
+  // canvas.innerHTML = "";
 }
 
-drawGrid();
+drawGrid(16);
+
+function setHoverGrid() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", colouring);
+  });
+}
+
+function colouring(e) {
+  console.log(e);
+  e.target.classList.add("dark");
+}
