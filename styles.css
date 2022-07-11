@@ -1,0 +1,23 @@
+.container {
+  width: 250px;
+  height: 250px;
+  background-color: antiquewhite;
+  border: solid;
+  display: flex;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid {
+  border: solid;
+  height: auto;
+  width: auto;
+  flex-grow: 1;
+}
+
+.button {
+  background-color: darkgray;
+}
